@@ -6,7 +6,7 @@ class TwittsController < ApplicationController
   end
 
   def new
-    #code
+    @twitt = Twitt.new
   end
 
   def create
