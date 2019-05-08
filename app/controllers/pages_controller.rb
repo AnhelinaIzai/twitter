@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @twitts = Twitts.all
+    @twitts = Twitt.all
   end
 end

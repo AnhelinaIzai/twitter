@@ -40,7 +40,7 @@ class TwittsController < ApplicationController
   end
   private
   def find_twitt
-    @twitt = Twitts.find(params [:id])
+    @twitt = Twitt.find(params[:id])
   end
 
   def twitt_params
