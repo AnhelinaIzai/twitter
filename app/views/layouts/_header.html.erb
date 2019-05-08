@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-info navbar-black">
+    <%= link_to "Home", root_path, class: "navbar-brand text-white" %>
+   
+    <ul class="navbar-nav ml-auto">      
+
+<% if !user_signed_in? %>
+      <%= link_to user_session_path, class: "nav-link text-white" do %>
+        <i class="fas fa-sign-in-alt"></i> Login
+      <% end %>
+<% else %>
+     
+      <%= link_to destroy_user_session_path, class: "nav-link text-white", method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i> Logout
+      <% end %>
+<% end %>
+    </ul>
+</nav>
