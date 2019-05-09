@@ -1,2 +1,9 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<h1> Your Profile Info</h1>
+<p><%= image_tag(current_user.profile.avatar_url, size: "90x80", class:"rounded-circle") %></p>
+
+<p><%= current_user.profile.nickname %></p>
+
+
+<p><%= link_to "Edit", edit_profile_path(current_user.profile.id), remote: true %></p>
+<div id = "edit-profile"></div>
+
