@@ -1,9 +1,17 @@
-<% if user_signed_in? %>
-  <% @user ||= current_user %>
-  <%= render "user_info" %>
-  <%= render 'form', twitt: @twitt %>
+<%= render "twitts/user_info" %>
+<% if @user == current_user %>
+  <%= render 'twitts/form', twitt: @twitt %>
+  <% else %>
+  <% if current_user.following?(@user) %>
+    <%= render 'unfollow' %>
+  <% else %>
+    <%= render 'follow' %>
+  <% end %>
 <% end %>
 
+<% if @twitts == [] %>
+    <p>No twitt yet</p>
+<% else %>
 <% @twitts.each do |p| %>
   <div class="card ">
     <div class="card-body">
@@ -11,9 +19,7 @@
     </div>
     <div class="card-footer text-white bg-secondary mb-3">
       Created by user:  <%= image_tag(p.user.avatar_url, size: "20x20", :class => 'rounded-circle')  %>
-       <%= link_to user_path(p.user.id) do %>
        <strong>@<%= p.user.username %></strong> <br>
-       <% end %>
       Created at <%= distance_of_time_in_words(p.created_at, Time.now) %> ago
       <% if user_signed_in? %>
         <% if p.user_id == current_user.id %>
@@ -24,9 +30,4 @@
     </div>
   </div>
 <% end %>
-
-<div class="row">
-  <div class="col-sm-12 text-center">
-    <%= will_paginate @twitts, :container => false %>
-  </div>
-</div>
+<% end %>

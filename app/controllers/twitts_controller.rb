@@ -1,8 +1,11 @@
 class TwittsController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
-  before_action :find_twitt, only: [:show, :edit, :update, :destroy]
+  before_action :find_twitt, only:[:show, :edit, :update, :destroy]
 
   def index
+    @user = User.find_by(id: params[:id])
+    @twitt = Twitt.new
+    @twitts = Twitt.paginate(:page => params[:page], :per_page => 5).order('id DESC')\
   end
 
   def new
@@ -12,7 +15,7 @@ class TwittsController < ApplicationController
   def create
     @twitt = current_user.twitts.build(twitt_params)
     if @twitt.save
-      redirect_to twitt_path(@twitt.id)
+      redirect_to root_path
     else
       render 'new'
     end
@@ -27,7 +30,7 @@ class TwittsController < ApplicationController
   end
 
   def update
-    if @twitt.update
+    if @twitt.update(twitt_params)
       redirect_to twitt_path(@twitt.id)
     else
       render 'edit'
@@ -38,12 +41,13 @@ class TwittsController < ApplicationController
     @twitt.destroy
     redirect_to root_path
   end
+
   private
   def find_twitt
     @twitt = Twitt.find(params[:id])
   end
 
   def twitt_params
-      params.require(:twitt).permit(:user_id, :title, :body, {photos: []})
-    end
+      params.require(:twitt).permit(:user_id, :body, {photos: []})
+  end
 end

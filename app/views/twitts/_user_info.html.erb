@@ -1,0 +1,7 @@
+<p><%= image_tag(@user.avatar_url) %></p>
+<p><strong>@<%= @user.username %></strong></p>
+
+
+<p><strong>Tweeets: </strong> <%= link_to @user.twitts.count, user_path(@user.id) %></p>
+<p><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p>
+<p><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>
