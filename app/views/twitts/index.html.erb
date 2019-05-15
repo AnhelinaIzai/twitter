@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% @user ||= current_user %>
   <%= render "user_info" %>
-  <%= render 'form', twitt: @twitt %>
+  
 <% end %>
 
 <% @twitts.each do |p| %>
@@ -9,16 +9,18 @@
     <div class="card-body">
       <p class="card-text"><%= raw p.body %></p>
     </div>
-    <div class="card-footer text-white bg-secondary mb-3">
+    <div class="card-footer text-black bg-info mb-3">
       Created by user:  <%= image_tag(p.user.avatar_url, size: "20x20", :class => 'rounded-circle')  %>
        <%= link_to user_path(p.user.id) do %>
-       <strong>@<%= p.user.username %></strong> <br>
+       <strong class="username">@<%= p.user.username %></strong> <br>
        <% end %>
       Created at <%= distance_of_time_in_words(p.created_at, Time.now) %> ago
       <% if user_signed_in? %>
         <% if p.user_id == current_user.id %>
-          <%= link_to 'Edit', edit_twitt_path(p.id) %> |
-          <%= link_to "Delete", twitt_path(p.id), method: :delete, data: {confirm: "Are you sure?"} %> |
+        
+          <%= link_to 'Edit', edit_twitt_path(p.id), class: "text-white" %> |
+          <%= link_to "Delete", twitt_path(p.id),class: "text-white", method: :delete, data: {confirm: "Are you sure?"} %> |
+        
         <% end %>
       <% end %>
     </div>

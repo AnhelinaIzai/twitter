@@ -1,3 +1,5 @@
-<h1>Twitts#new</h1>
-<p>Find me in app/views/twitts/new.html.erb</p>
-<%= render 'form', twitt: @twitt %> <%= link_to 'Back', twitts_path %> 
+<h1>Create your new twitt</h1>
+<%= render 'form', twitt: @twitt %> 
+<div class="back">
+<%= link_to 'Back', twitts_path, class: " btn btn-outline-info" %> 
+</div>

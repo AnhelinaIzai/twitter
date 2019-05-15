@@ -1,7 +1,9 @@
-<p><%= image_tag(@user.avatar_url) %></p>
-<p><strong>@<%= @user.username %></strong></p>
+<div class="image">
+<p><%= image_tag(@user.avatar_url, size:"100x100") %></p>
+</div>
+<h5 class="name"><strong>@<%= @user.username %></strong></h5>
 
 
-<p><strong>Tweeets: </strong> <%= link_to @user.twitts.count, user_path(@user.id) %></p>
-<p><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p>
-<p><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>
+<p class="pole btn btn-outline-info"><strong>Tweeets: </strong> <%= link_to @user.twitts.count, user_path(@user.id) %></p><br />
+<p class="pole btn btn-outline-info"><strong>Following: </strong> <%= link_to @user.followed_users.count, following_user_path(@user.id) %><%=  %></p><br />
+<p class="pole btn btn-outline-info"><strong>Followers: </strong><%= link_to @user.followers.count, followers_user_path(@user.id) %></p>

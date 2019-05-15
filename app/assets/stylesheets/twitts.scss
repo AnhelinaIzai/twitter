@@ -1,3 +1,41 @@
 // Place all the styles related to the twitts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Kodchasan');
+
+.image {
+	margin-top: 10px;
+	text-align: center;
+	
+}
+.pole {
+	font-family: 'Kodchasan', sans-serif;
+	margin-top: 10px;
+	margin-left: 590px;
+}
+.name {
+	font-family: 'Kodchasan', sans-serif;
+	margin-top: 10px;
+	text-align: center;
+	}
+.field {
+	margin-left: 5px;
+}
+ .actions {
+    padding:3px;
+    margin-left: 25px;
+
+ }
+ .photo {
+    margin-left: 28px;
+ }
+ .back {
+ padding:3px;
+    margin-left: 25px;
+ }
+ .username {
+   color: white;
+
+ }
+ 
