@@ -13,7 +13,7 @@ class User < ApplicationRecord
                                    dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
-  validates :username, presence: true, length: 5..15, uniqueness: true, format: { without: /[!-\/\@\^\~\`\(\)\[\]\>\<\=]/ }
+  validates :username, presence: true, length: 5..15, uniqueness: true
 
   mount_uploader :avatar, AvatarUploader
 
