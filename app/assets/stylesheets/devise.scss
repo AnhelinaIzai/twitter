@@ -8,23 +8,24 @@ h3 {
 	padding: 6px;
 	}
 
-.fields1 {
+.fields {
 	background: #CCE5FF;
 	width: 500px;
 	margin-left: 400px;
 	
 }
-.fields2 {
-	background: #CCE5FF;
-	width: 500px;
-	margin-left: 400px;
-	
-}
+
 .fields3 {
   background: #CCE5FF;
   width: 700px;
   margin-left: 300px;
   
+}
+
+.fielde {
+  padding: 20px;
+  margin-left: 70px;
+  color: black; 
 }
 .field {
   padding: 20px;
@@ -40,6 +41,7 @@ h3 {
   border-color: #4682B4;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+  margin-left: 60px;
   
 }
   .field input[type=email] {
@@ -51,17 +53,10 @@ h3 {
   border-color: #4682B4;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-  
-}
-input[type=email]:focus {
-  width: 90%;
-}
-input[type=text]:focus {
-  width: 90%;
+  margin-left: 60px;
 }
 
-
-input[type=password] {
+  input[type=password] {
   width: 70%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -70,10 +65,18 @@ input[type=password] {
   border-color: #4682B4;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+  margin-left: 60px;
   
 }
+input[type=email]:focus {
+  width: 80%;
+}
+input[type=text]:focus {
+  width: 80%;
+}
+
 input[type=password]:focus {
-  width: 90%;
+  width: 80%;
 }
 
 .actions input[type="submit"] {
@@ -85,8 +88,9 @@ input[type=password]:focus {
   font-size: 18px;
   border-radius: 30px;
   margin-left: 170px;
-  width: 150px;
+  width: 180px;
   cursor: pointer;
+  margin-left: 130px;
 } 
 .actions1 input[type="submit"] {
   border: none;
@@ -103,7 +107,7 @@ input[type=password]:focus {
 
  .file {
     padding: 20px;
-  margin-left: 113px;
+  margin-left: 80px;
   color: black;	
  }
 input[type=submit]:hover {
